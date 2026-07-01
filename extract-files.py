@@ -62,6 +62,12 @@ blob_fixups: blob_fixups_user_type = {
         .add_needed('libcrypto_shim.so'),
     'vendor/etc/msm_irqbalance.conf': blob_fixup()
         .regex_replace('IGNORED_IRQ=27,23,38', 'IGNORED_IRQ=27,23,38,267,305'),
+    'system_ext/lib64/libwfdservice.so': blob_fixup()
+        .add_needed('libaudiobase.so')
+        .replace_needed('android.media.audio.common.types-V4-cpp.so', 'android.media.audio.common.types-V5-cpp.so'),
+    'system_ext/lib64/libwfdmmsrc_system.so': blob_fixup()
+        .add_needed('libaudiobase.so')
+        .add_needed('libgui_shim.so'),
     (
         'vendor/lib/libstagefright_soft_ac4dec.so', 
         'vendor/lib/libstagefright_soft_ddpdec.so', 
