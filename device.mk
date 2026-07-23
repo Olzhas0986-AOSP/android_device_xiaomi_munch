@@ -168,7 +168,8 @@ $(call soong_config_set,libcameraservice,ext_lib,libcameraservice_extension.xiao
 
 # Device-specific settings
 PRODUCT_PACKAGES += \
-    XiaomiParts
+    XiaomiParts \
+    DolbyAtmos
 
 # Display
 PRODUCT_PACKAGES += \
